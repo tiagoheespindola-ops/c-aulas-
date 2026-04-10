@@ -9,7 +9,9 @@ int main()
     int valorDigitado = 0;
     int N;
     int *lista;
-
+    int maiorV, menorV;
+    
+    
     cout<<"Quantidade de N a serem armazenados: ";
     cin>>N;
     cout<<N<<endl;
@@ -21,6 +23,16 @@ int main()
         cout<<"DIGITE O VALOR DESEJADO: "<<endl;
         cin>>valorDigitado;
         lista [i]=valorDigitado;
+        if(i==0){
+            maiorV = valorDigitado;
+            menorV = valorDigitado;
+        }
+        if(valorDigitado>maiorV){
+            maiorV = valorDigitado;
+        }
+        if(valorDigitado<menorV){
+            menorV = valorDigitado;
+        }
     }
         cout << "Valores da lista: ";
     
@@ -30,12 +42,10 @@ int main()
         cout << lista[i] << " ";
     }
         cout << endl;
+        
+    cout<<"Menor Valor: "<<menorV<<endl;
+    cout<<"Maior Valor: "<<maiorV<<endl;
     
     free (lista);
-
-
-    
-    
-   
    return 0; 
 }
